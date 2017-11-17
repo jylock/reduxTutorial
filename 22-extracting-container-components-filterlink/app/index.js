@@ -103,7 +103,7 @@ const Link = ({
 // provides data and behavior
 // delegates all rendering to Link Presentational componet
 class FilterLink extends React.Component {
-	componetDidMount() {
+	componentDidMount() {
 		this.unsubscribe = store.subscribe(() =>
 			this.forceUpdate()
 		);

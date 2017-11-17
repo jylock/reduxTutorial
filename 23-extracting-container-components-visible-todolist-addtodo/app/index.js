@@ -35,7 +35,6 @@ const todo = (state, action) => {
 const todos = (state=[], action) => {
 	switch (action.type) {
 		case 'ADD_TODO':
-			console.log("inside todos reducer");
 			return [
 				...state,
 				todo(undefined, action)
@@ -104,7 +103,7 @@ const Link = ({
 // provides data and behavior
 // delegates all rendering to Link Presentational componet
 class FilterLink extends React.Component {
-	componetDidMount() {
+	componentDidMount() {
 		this.unsubscribe = store.subscribe(() =>
 			this.forceUpdate()
 		);
@@ -235,7 +234,7 @@ const getVisibleTodos = (
 
 
 class VisibleTodoList extends React.Component {
-	componetDidMount() {
+	componentDidMount() {
 		this.unsubscribe = store.subscribe(() =>
 			this.forceUpdate()
 		);
@@ -246,10 +245,8 @@ class VisibleTodoList extends React.Component {
 	}
 
 	render() {
-		console.log("VisibleTodoList rendering");
 		const props = this.props;
 		const state = store.getState();
-		console.log(state);
 		return (
 			<TodoList
 				todos={
